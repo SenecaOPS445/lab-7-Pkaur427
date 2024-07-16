@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Student ID: Pkaur427 
+# Student ID: Pkaur427
 
 class Time:
     """Simple object type for time of the day.
@@ -45,6 +45,14 @@ class Time:
            return False
         return True
 
+    def __str__(self):
+        '''return a string representation for the object self'''
+        return f'{self.hour:02d}:{self.minute:02d}:{self.second:02d}'
+
+    def __repr__(self):
+        '''return a string representation for the object self'''
+        return f'{self.hour:02d}.{self.minute:02d}.{self.second:02d}'
+
 def sec_to_time(seconds):
     '''convert a given number of seconds to a time object in
        hour, minute, second format'''
@@ -52,3 +60,4 @@ def sec_to_time(seconds):
     minutes, time.second = divmod(seconds, 60)
     time.hour, time.minute = divmod(minutes, 60)
     return time
+
